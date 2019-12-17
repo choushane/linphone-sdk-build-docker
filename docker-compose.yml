@@ -1,0 +1,20 @@
+
+version: '2'
+services:
+
+  linphone_sdk:
+    build: /home/shane/work_space/android/linphone_sdk
+    image: linphone_sdk-img:0.0.1
+    container_name: linphone_sdk
+    privileged: true
+    networks:
+        - lcs_vlan
+    volumes:
+        - /home/shane/work_space/android/linphone_sdk/source:/home/workspace
+    ports:
+        - '2222:22'
+    command: './entrypoint.sh'
+
+networks:
+  lcs_vlan:
+
