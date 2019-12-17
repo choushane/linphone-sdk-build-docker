@@ -27,6 +27,7 @@ RUN unzip -o platform-tools.zip -d /android_sdk/
 
 #licenses
 RUN mkdir /android_sdk/licenses
+COPY android-sdk-license /android_sdk/licenses
 
 ENV ANDROID_HOME=/platform_sdk
 
@@ -37,4 +38,3 @@ ENV TW=Asia/Taipei
 RUN ln -snf /usr/share/zoneinfo/$TW /etc/localtime && echo $TW > /etc/timezone
 
 COPY entrypoint.sh /
-
