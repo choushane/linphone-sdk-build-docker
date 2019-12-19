@@ -29,7 +29,7 @@ RUN unzip -o platform-tools.zip -d /android_sdk/
 RUN mkdir /android_sdk/licenses
 COPY android-sdk-license /android_sdk/licenses
 
-ENV ANDROID_HOME=/platform_sdk
+ENV ANDROID_HOME=/android_sdk
 
 ENV PATH=$ANDROID_HOME:$PATH
 
